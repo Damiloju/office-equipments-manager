@@ -9,7 +9,7 @@ use App\Http\Requests;
 class PagesController extends Controller
 {
     public function index () {
-
+    	// returns the home view
     	return view('home');
     }
 }

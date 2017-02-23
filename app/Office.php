@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+// Office Table Model
 class Office extends Model
 {
     public function path () {

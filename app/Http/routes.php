@@ -19,6 +19,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('office/{office}', 'OfficeController@show');
 	Route::get('insert', 'RecordsController@index');
 	Route::get('records/{record}/delete', 'RecordsController@destroy');
+	Route::get('records/{record}/reduce', 'RecordsController@reduce');
 });
 
 

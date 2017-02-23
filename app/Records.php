@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+// Records Table Model
 class Records extends Model
 {
     public function office(){

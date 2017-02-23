@@ -9,9 +9,10 @@
     
 
     <!-- Styles -->
+    <!-- Bootstrap stylesheet link -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <!-- Optional theme -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">
 
 </head>
 <body id="app-layout">
@@ -35,12 +36,14 @@
                     <li><a href="{{ url('/') }}">Our App</a></li>
                 </ul>
 
+                 @if($user = Auth::user())
+                <a href="\office" class="btn btn-warning navbar-btn ">Offices</a>
+                @endif
+
+                <!-- Right Side Of Navbar -->
                 @if($user = Auth::user())
                     <a href="\insert" class="btn btn-warning navbar-btn navbar-right">Quick Insert</a>    
                 @endif
-                
-
-                <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
@@ -65,8 +68,8 @@
     @yield('content')
 
     <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/tether.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
