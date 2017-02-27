@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">
 
 </head>
-<body id="app-layout">
+<body id="app-layout" style="font-family: Fira Code;">
     <nav class="navbar navbar-inverse navbar-static-top" style="margin-bottom: 0px;">
         <div class="container">
             <div class="navbar-header">
@@ -41,9 +41,9 @@
                 @endif
 
                 <!-- Right Side Of Navbar -->
-                @if($user = Auth::user())
+                <!-- @if($user = Auth::user())
                     <a href="\insert" class="btn btn-warning navbar-btn navbar-right">Quick Insert</a>    
-                @endif
+                @endif -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())

@@ -7,17 +7,27 @@ use Illuminate\Database\Eloquent\Model;
 // Office Table Model
 class Office extends Model
 {
-    public function path () {
+    /**
+     * @return string
+     */
+    public function path ()
+    {
     	return '/office/'.$this->id;
     }
 
-    public function records (){
-
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function records ()
+    {
     	return $this->hasMany(Records::class);
     }
 
-    public function equipments(){
-
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function equipments()
+    {
     	return $this->hasMany(Equipments::class);
     }
 }
