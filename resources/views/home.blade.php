@@ -9,7 +9,7 @@
 
             <div class="btn-group">
                 <a href="\office" class="btn btn-lg btn-warning">View Offices</a>
-                <a href="" class="btn btn-lg btn-default">-------------</a>
+                <a href="\equipment\new" class="btn btn-lg btn-default">Create Equipment</a>
                 <a href="\add\office" class="btn btn-lg btn-warning">Add Office</a>
             </div>
         </div><!-- End Container -->

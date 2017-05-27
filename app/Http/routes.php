@@ -27,6 +27,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('records/{office}/add', 'RecordsController@add');
 	Route::post('records/{office}/add', 'RecordsController@store');
+	Route::get('records/{record}', 'RecordsController@show');
+
+    Route::get('equipment/new', 'EquipmentController@add');
+    Route::post('equipment/new', 'EquipmentController@store');
 });
 
 

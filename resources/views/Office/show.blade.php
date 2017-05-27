@@ -40,8 +40,10 @@
 					<li class="list-group-item">
 
 						<!-- Displays the equipments name -->
-						{{ $record->equipments->name}}
-						
+						<a href="/records/{{ $record->id }}">
+							{{ $record->equipments->name}}
+						</a>
+
 						<!-- delete button -->
 						<a href="/records/{{ $record->id }}/delete" class="btn btn-sm btn-danger pull-right" data-toggle="tooltip" data-placement="top" title="Delete">
 						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>

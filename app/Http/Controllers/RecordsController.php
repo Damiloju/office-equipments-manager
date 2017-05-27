@@ -7,6 +7,7 @@ use App\Office;
 use App\Equipments;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 
 class RecordsController extends Controller
 {
@@ -80,11 +81,18 @@ class RecordsController extends Controller
 
         $record->office_id = $office->id;
         $record->euipments_amount = request()->euipment_amount;
+        $record->user_id = Auth::user()->id;
 
         $record->save();
 
         \Session::flash('sto', 'You Have Added An Equipment Successfully');
         return redirect("office/$office->id");
+    }
+
+    public function show(Records $record)
+    {
+        $record->load('office','user','equipments');
+        return view('record.details',compact('record'));
     }
 
 }
