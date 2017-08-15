@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Our Project</title>
+    <title>Our <Project></Project></title>
 
     
 
@@ -34,7 +34,7 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav" style="font-size: 20px">
-                    <li><a href="{{ url('/') }}">Our App</a></li>
+                    <li><a href="{{ url('/') }}">OMS</a></li>
                 </ul>
 
                  @if($user = Auth::user())
