@@ -16,17 +16,26 @@ class EquipmentController extends Controller
 
     public function store()
     {
+        $messages = [
+            'name.required' => 'The equipment needs to have a  name!',
+            'name.min:3'    => 'The name of the equipment must have at least 3 characters',
+            'other_name.required' => 'The equipment needs to have a second name!',
+            'other_name.min:3'    => 'The other name of the equipment must have at least 3 characters',
+            'price.required' => 'The equipment needs to have a  price!',
+            'name.numeric'    => 'The price of the equipment should be a number',
+        ];
+
         $this->validate(request(), [
             'name' => 'required|min:3',
             'other_name' => 'required|min:3',
             'price' => 'required|numeric'
-        ]);
+        ], $messages);
 
         $equipment = new Equipments;
 
         $equipment->create(request()->all());
 
-        \Session::flash('status', 'You Have Created An Equipment Successfully');
+        flash()->custom('Sweet!', 'You Have Created An Equipment Successfully');
 
         return back();
     }

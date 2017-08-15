@@ -51,25 +51,33 @@ class OfficeController extends Controller
     /**
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store()
-    {
-        $this->validate(request(), [
-            'body' => 'required|min:5'
-        ]);
+        public function store()
+        {
 
-        $office = new Office;
+            $messages = [
+                'body.required' => 'The office needs to have a  name!',
+                'body.min:5'    => 'The name of the office must have at least 5 characters',
+            ];
 
-        $office->name = request()->body;
+            $this->validate(request(), [
+                'body' => 'required|min:5'
+            ],$messages);
 
-        try {
-            $office->save();
+            $office = new Office;
 
-            \Session::flash('status', 'You Have Added An Office Successfully');
+            $office->name = request()->body;
 
-            return back();
-        }catch (QueryException $e) {
-//            return response()->json(['status'=>$e->getCode(),'Message'=>$e->getMessage()]);
-            return back()->withErrors("Office $office->name already exist");
+            try {
+                $office->save();
+
+                flash()->custom('Sweet!', 'You Have Added An Office Successfully');
+
+                return back();
+            }catch (QueryException $e) {
+    //            return response()->json(['status'=>$e->getCode(),'Message'=>$e->getMessage()]);
+                flash()->error('Sorry!', "The office $office->name already exist");
+
+                return back();
+            }
         }
-    }
 }

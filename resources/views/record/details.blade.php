@@ -27,7 +27,7 @@
 				</li>
 
 				<li class="list-group-item">
-					<h4 style="font-weight: 100"><span style="font-weight:500">Price:</span> {{$record->equipments->price}}</h4>
+					<h4 style="font-weight: 100"><span style="font-weight:500">Price:</span> {{currencyFormatter($record->equipments->price)}}</h4>
 				</li>
 
 				<li class="list-group-item">

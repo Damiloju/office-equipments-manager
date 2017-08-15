@@ -24,6 +24,6 @@ class AddPriceToEquipmentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropColumn('price');
+        $table->dropColumn('price');
     }
 }

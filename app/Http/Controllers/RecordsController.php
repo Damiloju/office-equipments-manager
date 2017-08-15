@@ -29,7 +29,7 @@ class RecordsController extends Controller
     	// deletes a record from the records table
     	$record->delete();
 
-        \Session::flash('del', 'You Have Deleted The Equipment Successfully');
+        flash()->custom('Done!', 'You Have Deleted The Equipment Successfully');
     	return back();
     }
 
@@ -42,7 +42,7 @@ class RecordsController extends Controller
     	$record->euipments_amount = $record->euipments_amount - 1;
     	$record->save();
 
-        \Session::flash('red', 'You Have Reduced The Equipment Successfully');
+        flash()->custom('Done!', 'You Have Reduced The Equipment Successfully');
     	return back();
 
     }
@@ -67,11 +67,17 @@ class RecordsController extends Controller
      */
     public function store (Office $office)
     {
+        $messages = [
+            'name.required' => 'The equipment needs to have a  name!',
+            'name.min:3'    => 'The name of the equipment must have at least 3 characters',
+            'euipment.required' => 'Kindly state the amount to add!',
+            'euipment.numeric'    => 'The amount should be a number',
+        ];
 
         $this->validate(request(), [
             'name' => 'required|min:3',
             'euipment_amount' => 'required|numeric',
-        ]);
+        ],$messages);
 
         $record = new Records;
 
@@ -85,7 +91,7 @@ class RecordsController extends Controller
 
         $record->save();
 
-        \Session::flash('sto', 'You Have Added An Equipment Successfully');
+        flash()->custom('Sweet!', 'You Have Added An Equipment Successfully');
         return redirect("office/$office->id");
     }
 

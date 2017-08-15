@@ -10,6 +10,7 @@
 
     <!-- Styles -->
     <!-- Bootstrap stylesheet link -->
+    <link rel="stylesheet" href="/css/sweetalert.css">
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <!-- Optional theme -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">
@@ -68,8 +69,11 @@
     @yield('content')
 
     <!-- JavaScripts -->
+    <script src="/js/sweetalert-dev.js"></script>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/tether.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
+
+    @include('partials.flash')
 </body>
 </html>

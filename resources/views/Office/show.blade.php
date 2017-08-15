@@ -1,32 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="container">
-		@if(Session::has('del'))
-				<div class="alert alert-success alert-dismissible" role="alert">
-				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				  	<span aria-hidden="true">&times;</span></button>
-				  	<strong>Success!</strong>{{ Session::get('del')}}.
-				</div>
-		@endif
-
-		@if(Session::has('red'))
-				<div class="alert alert-success alert-dismissible" role="alert">
-				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				  	<span aria-hidden="true">&times;</span></button>
-				  	<strong>Success!</strong>{{ Session::get('red')}}.
-				</div>
-		@endif
-
-		@if(Session::has('sto'))
-				<div class="alert alert-success alert-dismissible" role="alert">
-				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				  	<span aria-hidden="true">&times;</span></button>
-				  	<strong>Success!</strong>{{ Session::get('sto')}}.
-				</div>
-		@endif
-	</div>
-
 	<div class="row">
 	<!-- Displays Office Name in an header 1 -->
 		<div class="col-md-6 col-md-offset-3">
