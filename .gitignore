@@ -4,7 +4,7 @@
 Homestead.yaml
 Homestead.json
 .env
-.idea
 /public/hot
 /public/js/app.js
 /public/css/app.css
+/.idea
