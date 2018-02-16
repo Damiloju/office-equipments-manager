@@ -4,6 +4,7 @@ import Vue from 'vue';
 import Example from './components/Example';
 import Home from './components/Home';
 import Offices from './components/Offices/Offices';
+import ViewOffice from './components/Offices/ViewOffice';
 import BtnLoader from './misc/ButtonLoader.vue';
 
 Vue.use(VueRouter);
@@ -15,6 +16,7 @@ Vue.use(VueRouter);
 
 Vue.component('example', Example);
 Vue.component('offices', Offices);
+Vue.component('viewoffice', ViewOffice);
 Vue.component('home', Home);
 Vue.component('btn-loading', BtnLoader);
 
