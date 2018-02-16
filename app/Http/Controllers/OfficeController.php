@@ -6,6 +6,7 @@ use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use App\Office;
 use App\Equipments;
+use JavaScript;
 
 use App\Http\Requests;
 
@@ -23,7 +24,11 @@ class OfficeController extends Controller
 
     	$offices = Office::all();
 
-    	return view('Office.index', compact('offices'));
+    	JavaScript::put([
+         'offices' => $offices
+        ]);
+
+    	return view('Office.index');
     }
 
     /**
