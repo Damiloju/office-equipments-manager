@@ -149,6 +149,12 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
+         * Package Service providers........
+         * */
+
+        'Laracasts\Utilities\JavaScript\JavaScriptServiceProvider',
+
+        /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
