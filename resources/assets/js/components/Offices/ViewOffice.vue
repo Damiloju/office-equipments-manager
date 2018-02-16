@@ -44,7 +44,6 @@
     {
         return {
           office: office,
-          loading: false,
         }
     },
     methods: {
