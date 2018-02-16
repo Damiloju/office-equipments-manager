@@ -65,10 +65,12 @@
             </div>
         </div>
     </nav>
-
-    @yield('content')
+    <div id="app">
+        @yield('content')
+    </div>
 
     <!-- JavaScripts -->
+    <script src="/js/app.js"></script>
     <script src="/js/sweetalert-dev.js"></script>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/tether.min.js"></script>

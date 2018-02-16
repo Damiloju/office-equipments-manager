@@ -11,11 +11,11 @@
 
 			<ul class="list-group">
 				<li class="list-group-item">
-					<h3 style="font-weight: 100"><span style="font-weight:500">Equipment:</span> {{$record->equipments->name}}</h3>
+					<h4 style="font-weight: 100"><span style="font-weight:500">Equipment:</span> {{$record->equipments->name}}</h4>
 				</li>
 
 				<li class="list-group-item">
-					<h4 style="font-weight: 100"><span style="font-weight:500">Bought On:</span> {{$record->created_at->format('jS \o\f F, Y g:i:s a')}}</h4>
+					<h4 style="font-weight: 100"><span style="font-weight:500">Added On:</span> {{$record->created_at->format('jS \o\f F, Y g:i:s a')}}</h4>
 				</li>
 
 				<li class="list-group-item">
