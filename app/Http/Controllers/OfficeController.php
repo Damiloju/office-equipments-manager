@@ -42,6 +42,10 @@ class OfficeController extends Controller
     	**/
     	$office->load('records.equipments');
 
+    	JavaScript::put([
+    	   'office' => $office,
+        ]);
+
     	return view('Office.show', compact('office'));
     }
 

@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Records;
 use App\Office;
 use App\Equipments;
+use JavaScript;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
@@ -98,7 +99,10 @@ class RecordsController extends Controller
     public function show(Records $record)
     {
         $record->load('office','user','equipments');
-        return view('record.details',compact('record'));
+        JavaScript::put([
+            'record' => $record
+        ]);
+        return view('record.details');
     }
 
 }
