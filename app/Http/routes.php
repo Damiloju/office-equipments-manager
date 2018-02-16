@@ -15,7 +15,7 @@
 Route::auth();
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('office', 'OfficeController@index');
+    Route::get('office', 'OfficeController@index')->name('office');
 	Route::get('office/{office}', 'OfficeController@show');
 	Route::get('add/office', 'OfficeController@add');
 	
