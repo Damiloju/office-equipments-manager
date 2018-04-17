@@ -79,7 +79,7 @@
                                         <span class="text-danger font-size-40">{{$data['faultyCount']}}</span>
                                     </div>
                                     <div class="progress progress-xxs mt-10 mb-0">
-                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 5%; height: 4px;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 40%; height: 4px;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
@@ -100,8 +100,8 @@
                             <h3 class="box-title">User Activities</h3>
 
                             <div class="box-tools pull-right">
-                                {{-- <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>--}}
+                               {{-- <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>--}}
                             </div>
                         </div>
                         <div class="box-body">
@@ -125,7 +125,7 @@
                                         <td>{{$records['office']['name']}}</td>
                                         <td>{{$records['created_at']}}</td>
                                     </tr>
-                                    <?php $i++;?>
+                                 <?php $i++;?>
                                 @endforeach
                                 </tbody>
                             </table>

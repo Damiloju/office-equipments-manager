@@ -71,13 +71,13 @@ class RecordsController extends Controller
         $messages = [
             'name.required' => 'The equipment needs to have a  name!',
             'name.min:3'    => 'The name of the equipment must have at least 3 characters',
-            'euipment.required' => 'Kindly state the amount to add!',
-            'euipment.numeric'    => 'The amount should be a number',
+            'equipments.required' => 'Kindly state the amount to add!',
+            'equipments.numeric'    => 'The amount should be a number',
         ];
 
         $this->validate(request(), [
             'name' => 'required|min:3',
-            'euipment_amount' => 'required|numeric',
+            'equipments_amount' => 'required|numeric',
         ],$messages);
 
         $record = new Records;
@@ -87,13 +87,13 @@ class RecordsController extends Controller
         $record->equipments_id = $equipment[0]->id;
 
         $record->office_id = $office->id;
-        $record->euipments_amount = request()->euipment_amount;
+        $record->equipments_amount = request()->equipments_amount;
         $record->user_id = Auth::user()->id;
 
         $record->save();
 
         flash()->custom('Sweet!', 'You Have Added An Equipment Successfully');
-        return redirect("office/$office->id");
+        return redirect("office");
     }
 
     public function show(Records $record)

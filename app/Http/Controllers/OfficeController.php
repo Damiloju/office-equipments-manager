@@ -31,6 +31,11 @@ class OfficeController extends Controller
     	return view('Office.index');
     }
 
+    public function getOffices()
+    {
+        return $offices = Office::all();
+    }
+
     /**
      * @param Office $office
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -41,12 +46,14 @@ class OfficeController extends Controller
 			Eager Loads the office table with the records and equipments relationship
     	**/
     	$office->load('records.equipments');
+//
+//    	JavaScript::put([
+//    	   'office' => $office,
+//        ]);
+//
+//    	return view('Office.show', compact('office'));
 
-    	JavaScript::put([
-    	   'office' => $office,
-        ]);
-
-    	return view('Office.show', compact('office'));
+        return $office;
     }
 
     /**
