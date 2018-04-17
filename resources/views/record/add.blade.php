@@ -28,7 +28,7 @@
 		  
 		    <label for="euipment_amount" class="col-sm-2 control-label">Amount</label>
 		    <div class="col-sm-10">
-		      <input type="text" class="form-control" name="euipment_amount" placeholder="Amount in Figures">
+		      <input type="text" class="form-control" name="equipments_amount" placeholder="Amount in Figures">
 		    </div>
 		  
 		  </div>

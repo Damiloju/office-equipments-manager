@@ -16,7 +16,7 @@ class CreateRecordsTable extends Migration
             $table->increments('id');
             $table->integer('office_id')->unsigned()->index();
             $table->integer('equipments_id')->unsigned()->index();
-            $table->integer('euipments_amount')->unsigned()->index();
+            $table->integer('equipments_amount')->unsigned()->index();
             $table->timestamps();
         });
     }

@@ -52,6 +52,7 @@ class AuthController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+//            'image' => 'required|image64:jpeg,jpg,png',
         ]);
     }
 
@@ -63,6 +64,14 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+        /*saving the image*/
+//        $imageData = $this->get('photo');
+//        $fileName = Carbon::now()->timestamp . '_' . uniqid() . '.' . explode('/', explode(':', substr($imageData, 0, strpos($imageData, ';')))[1])[1];
+//        $this->filepath = storage_path('app/public/students/' . $fileName);
+//        Image::make($this->get('photo'))->save($this->filepath);
+//        $filename = $fileName;
+
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
