@@ -54,17 +54,13 @@
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="index.html" class="logo">
+        <a href="{{route('home')}}" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <b class="logo-mini">
-                <span class="light-logo"><img src="../images/aries-light.png" alt="logo"></span>
-                <span class="dark-logo"><img src="../images/aries-dark.png" alt="logo"></span>
+                {{--<span class="light-logo"><img src="/img/logo.jpg" alt="logo"></span>
+                <span class="dark-logo"><img src="/img/logo.jpg" alt="logo"></span>--}}
+                <h2>OMS</h2>
             </b>
-            <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg">
-		  <img src="../images/logo-light-text.png" alt="logo" class="light-logo">
-	  	  <img src="../images/logo-dark-text.png" alt="logo" class="dark-logo">
-	  </span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -76,16 +72,9 @@
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a href="{{ url('/') }}" class="dropdown-toggle">
+                        <a href="{{ route('home') }}" class="dropdown-toggle">
                             Office Management System
                         </a>
-
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-cog fa-spin"></i></a>
                     </li>
                 </ul>
             </div>
@@ -101,15 +90,15 @@
             <ul class="sidebar-menu tree" data-widget="tree">
                 <li class="user-profile treeview">
                     <a href="#">
-                        <span><h3>Juliya Brus</h3> >>></span>
+                        <span><h3>{{auth()->user()->name}}</h3> >>></span>
                     </a>
                 </li>
                 <li class="header nav-small-cap">PERSONAL</li>
-                <li class="active">
-                    <a href="{{ url('/') }}">
+                <li class="treeview">
+                    <a href="{{route('home')}}">
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                         <span class="pull-right-container">
-                          <i class="fa fa-angle-right pull-right"></i>
+                          <i class="fa fa-angle-left pull-right"></i>
                         </span>
                     </a>
                 </li>
@@ -118,15 +107,23 @@
                         <i class="fa fa-building"></i>
                         <span>Offices</span>
                         <span class="pull-right-container">
-                          <i class="fa fa-angle-right pull-right"></i>
+                          <i class="fa fa-angle-left pull-right"></i>
                         </span>
                     </a>
                 </li>
                 <li class="treeview">
-                    <a href="#">
+                    <a href="{{route('equipment')}}">
                         <i class="fa fa-plug"></i> <span>Equipments</span>
                         <span class="pull-right-container">
-                          <i class="fa fa-angle-right pull-right"></i>
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="{{ url('/logout') }}">
+                        <i class="fa fa-sign-out"></i> <span>Logout</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
                         </span>
                     </a>
                 </li>

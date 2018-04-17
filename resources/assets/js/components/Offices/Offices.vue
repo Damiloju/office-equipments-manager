@@ -164,7 +164,7 @@
             axios.get('/office/'+id).then(res => {
                 if(res.status == 200){
                     this.officeDetails = res.data
-                    this.showDetails = true;
+                    this.showDetails = !this.showDetails;
                     console.log(this.officeDetails)
                 }
             }).catch(err => {

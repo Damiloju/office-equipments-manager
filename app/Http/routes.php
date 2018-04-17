@@ -30,10 +30,10 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('records/{office}/add', 'RecordsController@store');
 	Route::get('records/{record}', 'RecordsController@show');
 
-    Route::get('equipment/new', 'EquipmentController@add')->name;
+    Route::get('equipment/new', 'EquipmentController@add')->name('equipment');
     Route::post('equipment/new', 'EquipmentController@store');
 });
 
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/test', 'HomeController@test');

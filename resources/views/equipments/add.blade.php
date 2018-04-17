@@ -1,47 +1,80 @@
-@extends('layouts.app')
+@extends('layouts.v2.app')
 
 @section('content')
-	
-	<div class="container">
 
-		<h2>Create An Equipment</h2>
+	<div class="content-wrapper" style="">
+		<!-- Content Header (Page header) -->
+		<section class="content-header">
+			<h1>
+				Office
+			</h1>
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+				<li class="breadcrumb-item active">Equipment</li>
+			</ol>
+		</section>
 
-		<form class="form-horizontal" method="POST" action="/equipment/new">
+		<!-- Main content -->
+		<section class="content">
+			<!-- /.row -->
+			<div class="row">
+				<div class="col-md-12">
+					<!-- AREA CHART -->
+					<div class="box">
+						<div class="box-header with-border">
+							<h3 class="box-title">Create Equipment</h3>
 
-			{{ csrf_field() }}
+							<!-- <div class="box-tools pull-right">
+                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                             </div>-->
+						</div>
+						<div class="box-body">
+							<form class="form-horizontal" method="POST" action="/equipment/new">
 
-		  <div class="form-group">
-		  	
-		  	<label for="name" class="col-sm-2 control-label">Equipment Name</label>
-			<div class="col-sm-10">
-				<input type="text" class="form-control" name="name" placeholder="Name of Equipment">
-			</div>
-		  </div>
+								{{ csrf_field() }}
 
-			<div class="form-group">
+								<div class="form-group">
 
-				<label for="name" class="col-sm-2 control-label">Other Name</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" name="other_name" placeholder="Other name of Equipment">
+									<label for="name" class="col-sm-2 control-label">Equipment Name</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" name="name" placeholder="Name of Equipment">
+									</div>
+								</div>
+
+								<div class="form-group">
+
+									<label for="name" class="col-sm-2 control-label">Other Name</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" name="other_name" placeholder="Other name of Equipment">
+									</div>
+								</div>
+
+								<div class="form-group">
+
+									<label for="euipment_amount" class="col-sm-2 control-label">Price</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" name="price" placeholder="Price in Figures">
+									</div>
+
+								</div>
+
+								<div class="form-group">
+									<div class="col-sm-offset-2 col-sm-10">
+										<button type="submit" class="btn btn-primary">Create Equipment</button>
+									</div>
+								</div>
+
+							</form>
+						</div>
+						<!-- /.box-body -->
+					</div>
+					<!-- /.box -->
 				</div>
 			</div>
-		  
-		  <div class="form-group">
-		  
-		    <label for="euipment_amount" class="col-sm-2 control-label">Price</label>
-		    <div class="col-sm-10">
-		      <input type="text" class="form-control" name="price" placeholder="Price in Figures">
-		    </div>
-		  
-		  </div>
-		  
-		  <div class="form-group">
-		    <div class="col-sm-offset-2 col-sm-10">
-		      <button type="submit" class="btn btn-primary">Create Equipment</button>
-		    </div>
-		  </div>
-		
-		</form>
 
+		</section>
+		<!-- /.content -->
 	</div>
+
 @stop
