@@ -93,7 +93,7 @@ class RecordsController extends Controller
         $record->save();
 
         flash()->custom('Sweet!', 'You Have Added An Equipment Successfully');
-        return redirect("office/$office->id");
+        return redirect("office");
     }
 
     public function show(Records $record)
