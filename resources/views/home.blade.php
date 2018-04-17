@@ -79,7 +79,7 @@
                                         <span class="text-danger font-size-40">{{$data['faultyCount']}}</span>
                                     </div>
                                     <div class="progress progress-xxs mt-10 mb-0">
-                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 40%; height: 4px;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 5%; height: 4px;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
