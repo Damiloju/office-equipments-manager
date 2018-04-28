@@ -24,7 +24,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('insert', 'RecordsController@index');
 	Route::get('records/{record}/delete', 'RecordsController@destroy');
-	Route::get('records/{record}/reduce', 'RecordsController@reduce');
+	Route::get('records/{record}/equipments/reduce', 'RecordsController@reduceEquipments');
+	Route::get('records/{record}/equipments/increase', 'RecordsController@addEquipments');
 	Route::get('records/{record}/faulty/increase', 'RecordsController@addFaulty');
 	Route::get('records/{record}/faulty/reduce', 'RecordsController@reduceFaulty');
 

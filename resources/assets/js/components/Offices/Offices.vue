@@ -96,18 +96,27 @@
                                         <th>Equipment Name</th>
                                         <th>Quantity</th>
                                         <th>Date</th>
-                                        <th class="text-center">Faulty</th>
+                                        <th>Faulty</th>
+                                        <th>Action</th>
                                     </tr>
                                     <tr v-for="(records,index) in officeDetails.records">
                                         <td>{{index+1}}</td>
                                         <td>{{records.equipments.name}}</td>
-                                        <td>{{records.equipments_amount}}</td>
+                                        <td>
+                                            {{records.equipments_amount}}&nbsp;
+                                            <a :href="'/records/' + records.id + '/equipments/reduce'"><i class="fa fa-minus-square"></i></a>
+                                            &nbsp;
+                                            <a :href="'/records/' + records.id + '/equipments/increase'"><i class="fa fa-plus-square"></i></a>
+                                        </td>
                                         <td>{{records.created_at}}</td>
-                                        <td class="text-center">
+                                        <td>
                                             {{records.no_of_faulty}} &nbsp;
                                             <a :href="'/records/' + records.id + '/faulty/reduce'"><i class="fa fa-minus-square"></i></a>
                                             &nbsp;
                                             <a :href="'/records/' + records.id + '/faulty/increase'"><i class="fa fa-plus-square"></i></a>
+                                        </td>
+                                        <td>
+                                            <a :href="'/records/' + records.id + '/delete'"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                 </tbody>

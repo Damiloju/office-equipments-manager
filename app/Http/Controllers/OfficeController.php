@@ -45,7 +45,7 @@ class OfficeController extends Controller
     	/**
 			Eager Loads the office table with the records and equipments relationship
     	**/
-    	$office->load('records.equipments');
+    	$office->load('records.equipments')->where('deleted_at', null);
 //
 //    	JavaScript::put([
 //    	   'office' => $office,
