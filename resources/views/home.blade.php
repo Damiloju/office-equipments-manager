@@ -3,7 +3,7 @@
 @section('content')
     <div class="content-wrapper" style="">
         <!-- Content Header (Page header) -->
-        <section class="content-header">
+        <section class="content-header" id="dark-theme-settings">
             <h1>
                 Dashboard
                 <small>Control panel</small>
@@ -15,11 +15,11 @@
         </section>
 
         <!-- Main content -->
-        <section class="content">
+        <section class="content" id="dark-theme-settings">
             <div class="row">
                 <div class="col-12 ">
                     <div class="box">
-                        <div class="row no-gutters py-2">
+                        <div class="row no-gutters py-2" id="dark-theme-settings">
 
                             <div class="col-sm-6 col-lg-3">
                                 <div class="box-body br-1 border-light">
@@ -95,8 +95,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <!-- AREA CHART -->
-                    <div class="box">
-                        <div class="box-header with-border">
+                    <div class="box" id="dark-theme-settings">
+                        <div class="box-header with-border" id="dark-theme-settings">
                             <h3 class="box-title">User Activities</h3>
 
                             <div class="box-tools pull-right">
@@ -105,7 +105,7 @@
                             </div>
                         </div>
                         <div class="box-body">
-                            <table class="table table-responsive">
+                            <table class="table table-responsive" id="dark-theme-settings">
                                 <tbody>
                                 <tr>
                                     <th style="width: 10px">#</th>

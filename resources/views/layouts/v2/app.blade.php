@@ -9,6 +9,10 @@
 
     <title>OMS - Dashboard</title>
 
+    @if(auth()->user()->theme_mode == 1)
+    <link rel="stylesheet" href="/css/my_css.css">
+    @endif
+
     <link rel="stylesheet" href="/css/sweetalert.css">
     <!-- Bootstrap 4.0-->
     <link rel="stylesheet" href="/bootstrap/bootstrap 4/css/bootstrap.css">
@@ -50,7 +54,7 @@
 </head>
 
 <body class="sidebar-mini skin-blue" style="height: auto; min-height: 100%;">
-<div class="wrapper" style="height: auto; min-height: 100%;">
+<div class="wrapper" style="height: auto; min-height: 100%;" id="dark-theme-settings">
 
     <header class="main-header">
         <!-- Logo -->
@@ -119,6 +123,16 @@
                         </span>
                     </a>
                 </li>
+
+                <li class="treeview">
+                    <a href="{{route('toggle-mode')}}">
+                        <i class="fa fa-laptop"></i> <span>Toggle Night Mode</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                </li>
+
                 <li class="treeview">
                     <a href="{{ url('/logout') }}">
                         <i class="fa fa-sign-out"></i> <span>Logout</span>
@@ -132,11 +146,11 @@
     </aside>
 
     <!-- Content Wrapper. Contains page content -->
-        <div id="app">
+        <div id="app" id="dark-theme-settings">
             @yield('content')
         </div>
     <!-- /.content-wrapper -->
-    <footer class="main-footer">
+    <footer class="main-footer" id="dark-theme-settings">
         <div class="pull-right d-none d-sm-inline-block">
             <ul class="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end">
 

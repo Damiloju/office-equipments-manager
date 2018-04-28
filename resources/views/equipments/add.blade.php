@@ -2,9 +2,9 @@
 
 @section('content')
 
-	<div class="content-wrapper" style="">
+	<div class="content-wrapper" id="dark-theme-settings">
 		<!-- Content Header (Page header) -->
-		<section class="content-header">
+		<section class="content-header" id="dark-theme-settings">
 			<h1>
 				Office
 			</h1>
@@ -15,13 +15,13 @@
 		</section>
 
 		<!-- Main content -->
-		<section class="content">
+		<section class="content" id="dark-theme-settings">
 			<!-- /.row -->
 			<div class="row">
 				<div class="col-md-12">
 					<!-- AREA CHART -->
-					<div class="box">
-						<div class="box-header with-border">
+					<div class="box" id="dark-theme-settings">
+						<div class="box-header with-border" id="dark-theme-settings">
 							<h3 class="box-title">Create Equipment</h3>
 
 							<!-- <div class="box-tools pull-right">
@@ -29,7 +29,7 @@
                                  <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                              </div>-->
 						</div>
-						<div class="box-body">
+						<div class="box-body" id="dark-theme-settings">
 							<form class="form-horizontal" method="POST" action="/equipment/new">
 
 								{{ csrf_field() }}

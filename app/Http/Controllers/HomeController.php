@@ -49,4 +49,17 @@ class HomeController extends Controller
 
         return view('home')->with('data', $data);
     }
+
+    public function toggleMode(User $user)
+    {
+        $theme_mode = auth()->user()->theme_mode;
+
+        if ($theme_mode == 0){
+            $result = $user->where('id',auth()->id())->update(['theme_mode' => 1]);
+        }else{
+            $result = $user->where('id',auth()->id())->update(['theme_mode' => 0]);
+        }
+
+        return back();
+    }
 }

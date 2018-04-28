@@ -35,6 +35,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('equipment/new', 'EquipmentController@add')->name('equipment');
     Route::post('equipment/new', 'EquipmentController@store');
+
+    Route::get('toggle-mode', 'HomeController@toggleMode')->name('toggle-mode');
 });
 
 
