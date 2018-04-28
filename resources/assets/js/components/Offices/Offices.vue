@@ -81,7 +81,7 @@
                     <div class="box">
                         <div class="box-header with-border">
                             <h3 class="box-title">{{officeDetails.name}} Office Details</h3>
-                            <h4 style="color: red; float: right;" v-if="officeDetails.records != ''"><a :href="'/records/'+officeDetails.id+'/add'">+ Add More Equipment</a></h4>
+                            <h4 style="color: red; float: right;" v-if="officeDetails.records != ''"><a :href="'/records/'+officeDetails.id+'/add'"><i class="fa fa-plus-circle"></i> Add More Equipment</a></h4>
 
                             <!-- <div class="box-tools pull-right">
                                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -96,12 +96,19 @@
                                         <th>Equipment Name</th>
                                         <th>Quantity</th>
                                         <th>Date</th>
+                                        <th class="text-center">Faulty</th>
                                     </tr>
                                     <tr v-for="(records,index) in officeDetails.records">
                                         <td>{{index+1}}</td>
                                         <td>{{records.equipments.name}}</td>
                                         <td>{{records.equipments_amount}}</td>
                                         <td>{{records.created_at}}</td>
+                                        <td class="text-center">
+                                            {{records.no_of_faulty}} &nbsp;
+                                            <a :href="'/records/' + records.id + '/faulty/reduce'"><i class="fa fa-minus-square"></i></a>
+                                            &nbsp;
+                                            <a :href="'/records/' + records.id + '/faulty/increase'"><i class="fa fa-plus-square"></i></a>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>

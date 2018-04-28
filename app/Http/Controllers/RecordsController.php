@@ -48,6 +48,26 @@ class RecordsController extends Controller
 
     }
 
+    public function addFaulty(Records $record)
+    {
+        $record->no_of_faulty = $record->no_of_faulty + 1;
+        $record->save();
+
+        flash()->custom('Done!', 'You Have Increased the no of faulty Equipment Successfully');
+        return back();
+
+    }
+
+    public function reduceFaulty(Records $record)
+    {
+        $record->no_of_faulty = $record->no_of_faulty - 1;
+        $record->save();
+
+        flash()->custom('Done!', 'You Have Reduced the no of faulty Equipment Successfully');
+        return back();
+
+    }
+
     /**
      * @param Office $office
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

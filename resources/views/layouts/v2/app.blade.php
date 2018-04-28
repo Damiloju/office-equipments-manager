@@ -142,7 +142,7 @@
 
             </ul>
         </div>
-        © 2017
+        ©TimothyMee 2017
     </footer>
 </div>
 <!-- ./wrapper -->
