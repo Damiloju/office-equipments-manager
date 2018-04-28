@@ -36,7 +36,7 @@ class HomeController extends Controller
         $officeCount = $office->count();
         $equipmentsCount = $equipments->count();
         $userCount = $user->count();
-        $faultyCount = $records->where('active', 0)->count();
+        $faultyCount = $records->where('no_of_faulty', '>', 0)->sum('no_of_faulty');
         $recordsDetails =  $records->with('office','user','equipments')->get();
 
         $data = [
@@ -48,5 +48,18 @@ class HomeController extends Controller
         ];
 
         return view('home')->with('data', $data);
+    }
+
+    public function toggleMode(User $user)
+    {
+        $theme_mode = auth()->user()->theme_mode;
+
+        if ($theme_mode == 0){
+            $result = $user->where('id',auth()->id())->update(['theme_mode' => 1]);
+        }else{
+            $result = $user->where('id',auth()->id())->update(['theme_mode' => 0]);
+        }
+
+        return back();
     }
 }

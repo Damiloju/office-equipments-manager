@@ -12,9 +12,9 @@
 </template>-->
 
 <template>
-    <div class="content-wrapper" style="">
+    <div class="content-wrapper" id="dark-theme-settings">
         <!-- Content Header (Page header) -->
-        <section class="content-header">
+        <section class="content-header" id="dark-theme-settings">
             <h1>
                 Office
             </h1>
@@ -25,13 +25,13 @@
         </section>
 
         <!-- Main content -->
-        <section class="content">
+        <section class="content" id="dark-theme-settings">
             <!-- /.row -->
             <div class="row">
                 <div class="col-md-6">
                     <!-- AREA CHART -->
-                    <div class="box">
-                        <div class="box-header with-border">
+                    <div class="box" id="dark-theme-settings">
+                        <div class="box-header with-border" id="dark-theme-settings">
                             <h3 class="box-title">Offices</h3>
 
                            <!-- <div class="box-tools pull-right">
@@ -39,9 +39,9 @@
                                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                             </div>-->
                         </div>
-                        <div class="box-body">
-                            <div class="chart" v-for="(office,index) in offices">
-                                <h4 style="margin-left: 40px"><a href="#" @click="showOfficeDetails(index+1, office.name)">{{index + 1}}.&nbsp;&nbsp;&nbsp;&nbsp;{{ office.name }}</a></h4>
+                        <div class="box-body" id="dark-theme-settings">
+                            <div class="chart" v-for="(office,index) in offices" id="dark-theme-settings">
+                                <h4 style="margin-left: 40px" id=""><a href="#" @click="showOfficeDetails(index+1, office.name)" id="dark-theme-settings">{{index + 1}}.&nbsp;&nbsp;&nbsp;&nbsp;{{ office.name }}</a></h4>
                             </div>
 
                         </div>
@@ -52,8 +52,8 @@
 
                 <div class="col-md-6">
                     <!-- AREA CHART -->
-                    <div class="box">
-                        <div class="box-header with-border">
+                    <div class="box" id="dark-theme-settings">
+                        <div class="box-header with-border" id="dark-theme-settings">
                             <h3 class="box-title">Add Offices</h3>
 
                             <!-- <div class="box-tools pull-right">
@@ -81,7 +81,7 @@
                     <div class="box">
                         <div class="box-header with-border">
                             <h3 class="box-title">{{officeDetails.name}} Office Details</h3>
-                            <h4 style="color: red; float: right;" v-if="officeDetails.records != ''"><a :href="'/records/'+officeDetails.id+'/add'">+ Add More Equipment</a></h4>
+                            <h4 style="color: red; float: right;" v-if="officeDetails.records != ''"><a :href="'/records/'+officeDetails.id+'/add'"><i class="fa fa-plus-circle"></i> Add More Equipment</a></h4>
 
                             <!-- <div class="box-tools pull-right">
                                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -96,12 +96,28 @@
                                         <th>Equipment Name</th>
                                         <th>Quantity</th>
                                         <th>Date</th>
+                                        <th>Faulty</th>
+                                        <th>Action</th>
                                     </tr>
                                     <tr v-for="(records,index) in officeDetails.records">
                                         <td>{{index+1}}</td>
                                         <td>{{records.equipments.name}}</td>
-                                        <td>{{records.equipments_amount}}</td>
+                                        <td>
+                                            {{records.equipments_amount}}&nbsp;
+                                            <a :href="'/records/' + records.id + '/equipments/reduce'"><i class="fa fa-minus-square"></i></a>
+                                            &nbsp;
+                                            <a :href="'/records/' + records.id + '/equipments/increase'"><i class="fa fa-plus-square"></i></a>
+                                        </td>
                                         <td>{{records.created_at}}</td>
+                                        <td>
+                                            {{records.no_of_faulty}} &nbsp;
+                                            <a :href="'/records/' + records.id + '/faulty/reduce'"><i class="fa fa-minus-square"></i></a>
+                                            &nbsp;
+                                            <a :href="'/records/' + records.id + '/faulty/increase'"><i class="fa fa-plus-square"></i></a>
+                                        </td>
+                                        <td>
+                                            <a :href="'/records/' + records.id + '/delete'"><i class="fa fa-trash"></i></a>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>

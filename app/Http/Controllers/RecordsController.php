@@ -28,6 +28,10 @@ class RecordsController extends Controller
     public function destroy(Records $record)
     {
     	// deletes a record from the records table
+        /*$record->deleted_by = Auth()->id();
+        $record->deleted_at = Carbon::now();
+        $record->save();*/
+
     	$record->delete();
 
         flash()->custom('Done!', 'You Have Deleted The Equipment Successfully');
@@ -38,13 +42,43 @@ class RecordsController extends Controller
      * @param Records $record
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function reduce(Records $record)
+    public function reduceEquipments(Records $record)
     {
-    	$record->euipments_amount = $record->euipments_amount - 1;
+    	$record->equipments_amount = $record->equipments_amount - 1;
     	$record->save();
 
         flash()->custom('Done!', 'You Have Reduced The Equipment Successfully');
     	return back();
+
+    }
+
+    public function addEquipments(Records $record)
+    {
+        $record->equipments_amount = $record->equipments_amount + 1;
+        $record->save();
+
+        flash()->custom('Done!', 'You Have Reduced The Equipment Successfully');
+        return back();
+
+    }
+
+    public function addFaulty(Records $record)
+    {
+        $record->no_of_faulty = $record->no_of_faulty + 1;
+        $record->save();
+
+        flash()->custom('Done!', 'You Have Increased the no of faulty Equipment Successfully');
+        return back();
+
+    }
+
+    public function reduceFaulty(Records $record)
+    {
+        $record->no_of_faulty = $record->no_of_faulty - 1;
+        $record->save();
+
+        flash()->custom('Done!', 'You Have Reduced the no of faulty Equipment Successfully');
+        return back();
 
     }
 

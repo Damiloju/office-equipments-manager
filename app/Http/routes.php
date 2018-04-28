@@ -24,7 +24,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('insert', 'RecordsController@index');
 	Route::get('records/{record}/delete', 'RecordsController@destroy');
-	Route::get('records/{record}/reduce', 'RecordsController@reduce');
+	Route::get('records/{record}/equipments/reduce', 'RecordsController@reduceEquipments');
+	Route::get('records/{record}/equipments/increase', 'RecordsController@addEquipments');
+	Route::get('records/{record}/faulty/increase', 'RecordsController@addFaulty');
+	Route::get('records/{record}/faulty/reduce', 'RecordsController@reduceFaulty');
 
 	Route::get('records/{office}/add', 'RecordsController@add');
 	Route::post('records/{office}/add', 'RecordsController@store');
@@ -32,6 +35,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('equipment/new', 'EquipmentController@add')->name('equipment');
     Route::post('equipment/new', 'EquipmentController@store');
+
+    Route::get('toggle-mode', 'HomeController@toggleMode')->name('toggle-mode');
 });
 
 
