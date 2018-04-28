@@ -36,7 +36,7 @@ class HomeController extends Controller
         $officeCount = $office->count();
         $equipmentsCount = $equipments->count();
         $userCount = $user->count();
-        $faultyCount = $records->where('active', 0)->count();
+        $faultyCount = $records->where('no_of_faulty', '>', 0)->sum('no_of_faulty');
         $recordsDetails =  $records->with('office','user','equipments')->get();
 
         $data = [
