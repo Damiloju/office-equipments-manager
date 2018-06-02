@@ -9,6 +9,7 @@ PHP 5.2+ and Composer are required.
 ## Installation
 After cloning the repository, Run:
 * Composer update
+* npm install
 * Copy `.env.example` to a new file `.env`
 * Edit database configuration in `.env`, change
     ```
